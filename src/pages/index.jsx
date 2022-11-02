@@ -12,11 +12,11 @@ import {
   GitHubIcon,
   LinkedInIcon,
 } from '@/components/SocialIcons'
-import image1 from '@/images/photos/image-1.jpg'
-import image2 from '@/images/photos/image-2.jpg'
-import image3 from '@/images/photos/image-3.jpg'
-import image4 from '@/images/photos/image-4.jpg'
-import image5 from '@/images/photos/image-5.jpg'
+import image1 from '@/images/photos/0a6a9387.jpg'
+import image2 from '@/images/photos/IMG_0010.jpg'
+import image3 from '@/images/photos/IMG_0148.jpg'
+import image4 from '@/images/photos/IMG_0682.jpg'
+import image5 from '@/images/photos/IMG_0758.jpg'
 import logoAirbnb from '@/images/logos/airbnb.svg'
 import logoFacebook from '@/images/logos/facebook.svg'
 import logoPlanetaria from '@/images/logos/planetaria.svg'
@@ -94,7 +94,8 @@ function Article({ article }) {
         {formatDate(article.date)}
       </Card.Eyebrow>
       <Card.Description>{article.description}</Card.Description>
-      <Card.Cta>Read article</Card.Cta>
+      {/* eslint-disable-next-line react/no-unescaped-entities */}
+      <Card.Cta>Lire l'article</Card.Cta>
     </Card>
   )
 }
@@ -211,10 +212,6 @@ function Resume() {
           </li>
         ))}
       </ol>
-      <Button href="#" variant="secondary" className="group mt-6 w-full">
-        Download CV
-        <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
-      </Button>
     </div>
   )
 }
@@ -224,12 +221,12 @@ function Photos() {
 
   return (
     <div className="mt-16 sm:mt-20">
-      <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
+      <div className="-my-4 flex justify-center gap-5 overflow-x-auto md:overflow-hidden py-4 sm:gap-8 snap-x snap-mandatory">
         {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
           <div
             key={image.src}
             className={clsx(
-              'relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl',
+              'snap-center relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl',
               rotations[imageIndex % rotations.length]
             )}
           >
@@ -251,7 +248,7 @@ export default function Home({ articles }) {
     <>
       <Head>
         <title>
-          Spencer Sharp - Software designer, founder, and amateur astronaut
+          CDF VendéeSpace
         </title>
         <meta
           name="description"
@@ -261,13 +258,15 @@ export default function Home({ articles }) {
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Software designer, founder, and amateur astronaut.
+            CDF VendéeSpace
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m Spencer, a software designer and entrepreneur based in New York
-            City. I’m the founder and CEO of Planetaria, where we develop
-            technologies that empower regular people to explore space on their
-            own terms.
+            La Fédération Française de Tir à l’Arc (FFTA) a confié l’organisation du Championnat de France
+            Jeunes en Salle au Comité de Vendée pour l’année 2023.
+          </p>
+          <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+            Ce Championnat de France Jeunes se déroulera du 24 au 26 février 2023 dans le cadre magnifique
+            du VENDESPACE à Mouilleron-le-Captif.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
@@ -303,7 +302,6 @@ export default function Home({ articles }) {
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
             <Newsletter />
-            <Resume />
           </div>
         </div>
       </Container>
