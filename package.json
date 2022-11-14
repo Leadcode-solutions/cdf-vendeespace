@@ -6,11 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next export"
   },
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
     "@headlessui/react": "^1.7.2",
+    "@heroicons/react": "^2.0.13",
     "@mapbox/rehype-prism": "^0.8.0",
     "@mdx-js/loader": "^2.1.2",
     "@mdx-js/react": "^2.1.5",

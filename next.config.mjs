@@ -11,6 +11,12 @@ const nextConfig = {
     newNextLinkBehavior: true,
     scrollRestoration: true,
   },
+  eslint: {
+    ignoreDuringBuilds: true
+  },
+  images: {
+    unoptimized: true
+  }
 }
 
 const withMDX = nextMDX({

@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import clsx from 'clsx'
 
+import { ChatBubbleLeftEllipsisIcon, UserCircleIcon, TagIcon } from '@heroicons/react/24/solid'
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
@@ -24,6 +25,7 @@ import logoStarbucks from '@/images/logos/starbucks.svg'
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
 import { formatDate } from '@/lib/formatDate'
+import { Fragment } from 'react'
 
 function MailIcon(props) {
   return (
@@ -116,10 +118,10 @@ function Newsletter() {
     >
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <MailIcon className="h-6 w-6 flex-none" />
-        <span className="ml-3">Stay up to date</span>
+        <span className="ml-3">Soyez à jour !</span>
       </h2>
       <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-        Get notified when I publish something new, and unsubscribe at any time.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </p>
       <div className="mt-6 flex">
         <input
@@ -243,12 +245,159 @@ function Photos() {
   )
 }
 
+function Maps () {
+  return (
+    <div className="overflow-hidden rounded-xl">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2735.7376392536175!2d-1.435563484400363!3d46.710910679135466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48042e39bb1521e7%3A0xfb6700b6f584998e!2sVENDESPACE!5e0!3m2!1sfr!2sfr!4v1668429167612!5m2!1sfr!2sfr"
+        className="w-full h-[30rem]"
+        allowFullScreen="" loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade" />
+    </div>
+  )
+}
+
+const activity = [
+  {
+    type: 'event',
+    person: { name: 'Première journée', href: '#' },
+    imageUrl: 'https://images.unsplash.com/photo-1520785643438-5bf77931f493?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80',
+    comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt nunc ipsum tempor purus vitae id. Morbi in vestibulum nec varius. Et diam cursus quis sed purus nam. ',
+    date: '24/02/23',
+  },
+  {
+    type: 'detail',
+    time: '10h30 - 13h00',
+    value: 'Ouverture du greffe',
+  },
+  {
+    type: 'detail',
+    time: '10h30 - 13h00',
+    value: 'Entrainement officiel',
+  },
+  {
+    type: 'detail',
+    time: '14h00 - 17h00',
+    value: 'Ouverture du greffe Départ 2 & 3',
+  },
+  {
+    type: 'detail',
+    time: '14h00 - 17h25',
+    value: 'Entraînement (3 volées) suivi des qualifications en rythme AB/CD',
+  },
+]
+
+function Timeline() {
+  return (
+    <div className="flow-root">
+      <ul role="list" className="-mb-8">
+        {activity.map((activityItem, activityItemIdx) => (
+          <li key={activityItem.id}>
+            <div className="relative pb-8">
+              {activityItemIdx !== activity.length - 1 ? (
+                <span className="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true" />
+              ) : null}
+              <div className="relative flex items-start space-x-3">
+                {activityItem.type === 'event' ? (
+                  <>
+                    <div className="relative">
+                      <img
+                        className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-400 ring-8 ring-white"
+                        src={activityItem.imageUrl}
+                        alt=""
+                      />
+
+                      <span className="absolute -bottom-0.5 -right-1 rounded-tl bg-white px-0.5 py-px">
+                        <ChatBubbleLeftEllipsisIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
+                      </span>
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <div>
+                        <div className="text-sm">
+                          <a href={activityItem.person.href} className="font-medium text-gray-900">
+                            {activityItem.person.name}
+                          </a>
+                        </div>
+                        <p className="mt-0.5 text-sm text-gray-500">Le {activityItem.date}</p>
+                      </div>
+                      <div className="mt-2 text-sm text-gray-700">
+                        <p>{activityItem.comment}</p>
+                      </div>
+                    </div>
+                  </>
+                ) : activityItem.type === 'detail' ? (
+                  <>
+                    <div>
+                      <div className="relative px-1">
+                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 ring-8 ring-white">
+                          <UserCircleIcon className="h-5 w-5 text-gray-500" aria-hidden="true" />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="min-w-0 flex-1 py-1.5">
+                      <div className="text-sm text-gray-500">
+                        <div className="">
+                          <p>{activityItem.time} : {activityItem.value}</p>
+                        </div>
+                        <span className="whitespace-nowrap">{activityItem.date}</span>
+                      </div>
+                    </div>
+                  </>
+                ) : activityItem.type === 'tags' ? (
+                  <>
+                    <div>
+                      <div className="relative px-1">
+                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 ring-8 ring-white">
+                          <TagIcon className="h-5 w-5 text-gray-500" aria-hidden="true" />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="min-w-0 flex-1 py-0">
+                      <div className="text-sm leading-8 text-gray-500">
+                        <span className="mr-0.5">
+                          <a href={activityItem.person.href} className="font-medium text-gray-900">
+                            {activityItem.person.name}
+                          </a>{' '}
+                          added tags
+                        </span>{' '}
+                        <span className="mr-0.5">
+                          {activityItem.tags.map((tag) => (
+                            <Fragment key={tag.name}>
+                              <a
+                                href={tag.href}
+                                className="relative inline-flex items-center rounded-full border border-gray-300 px-3 py-0.5 text-sm"
+                              >
+                                <span className="absolute flex flex-shrink-0 items-center justify-center">
+                                  <span
+                                    className={clsx(tag.color, 'h-1.5 w-1.5 rounded-full')}
+                                    aria-hidden="true"
+                                  />
+                                </span>
+                                <span className="ml-3.5 font-medium text-gray-900">{tag.name}</span>
+                              </a>{' '}
+                            </Fragment>
+                          ))}
+                        </span>
+                        <span className="whitespace-nowrap">{activityItem.date}</span>
+                      </div>
+                    </div>
+                  </>
+                ) : null}
+              </div>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
 export default function Home({ articles }) {
   return (
     <>
       <Head>
         <title>
-          CDF VendéeSpace
+          Championnat de France - VendéeSpace
         </title>
         <meta
           name="description"
@@ -258,27 +407,13 @@ export default function Home({ articles }) {
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            CDF VendéeSpace
+            Championnat de France 2023<br />en salle 18m.
           </h1>
+          <p className="font-bold opacity-50 text-2xl text-zink-400 dark:text-white">Vendespace - Vendée</p>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            La Fédération Française de Tir à l’Arc (FFTA) a confié l’organisation du Championnat de France
-            Jeunes en Salle au Comité de Vendée pour l’année 2023.
-          </p>
-          <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            Ce Championnat de France Jeunes se déroulera du 24 au 26 février 2023 dans le cadre magnifique
-            du VENDESPACE à Mouilleron-le-Captif.
+            La Fédération Française de Tir à l’Arc (<a href="https://www.ffta.fr" target="_blank">FFTA</a>) délègue au comité départemental de Vendée de tir à l'arc de l'organisation du "Championat de France jeune de tir à 18m" qui aura lieu du 24 au 26 février 2023 à Mouilleron-Le-Captif au Vendespace.
           </p>
           <div className="mt-6 flex gap-6">
-            <SocialLink
-              href="https://twitter.com"
-              aria-label="Follow on Twitter"
-              icon={TwitterIcon}
-            />
-            <SocialLink
-              href="https://instagram.com"
-              aria-label="Follow on Instagram"
-              icon={InstagramIcon}
-            />
             <SocialLink
               href="https://github.com"
               aria-label="Follow on GitHub"
@@ -304,6 +439,14 @@ export default function Home({ articles }) {
             <Newsletter />
           </div>
         </div>
+      </Container>
+      <Container className="mt-9 py-10">
+        <h2 className="text-3xl font-semibold tracking-tight text-zinc-800 dark:text-zinc-100 mb-5">Déroulement</h2>
+        <Timeline />
+      </Container>
+      <Container className="mt-9 py-10">
+        <h2 className="text-3xl font-semibold tracking-tight text-zinc-800 dark:text-zinc-100 mb-5">Localisation</h2>
+        <Maps />
       </Container>
     </>
   )
