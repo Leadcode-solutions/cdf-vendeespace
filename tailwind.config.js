@@ -132,7 +132,7 @@ module.exports = {
             textDecorationColor: 'var(--tw-prose-underline)',
             transitionProperty: 'color, text-decoration-color',
             transitionDuration: theme('transitionDuration.150'),
-            transitionTimingFunction: theme('transitionTimingFunction.in-out'),
+            transitionTimingFunction: theme('transitionTimingFunction.in-docs'),
           },
           'a:hover': {
             color: 'var(--tw-prose-links-hover)',
