@@ -3,13 +3,11 @@ import Head from 'next/head'
 import Link from 'next/link'
 import clsx from 'clsx'
 
-import { ChatBubbleLeftEllipsisIcon, UserCircleIcon, TagIcon } from '@heroicons/react/24/solid'
+import {ChatBubbleLeftEllipsisIcon, UserCircleIcon, TagIcon, SunIcon} from '@heroicons/react/24/solid'
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import {
-  TwitterIcon,
-  InstagramIcon,
   GitHubIcon,
   LinkedInIcon,
 } from '@/components/SocialIcons'
@@ -18,14 +16,20 @@ import image2 from '@/images/photos/IMG_0010.jpg'
 import image3 from '@/images/photos/IMG_0148.jpg'
 import image4 from '@/images/photos/IMG_0682.jpg'
 import image5 from '@/images/photos/IMG_0758.jpg'
-import logoAirbnb from '@/images/logos/airbnb.svg'
-import logoFacebook from '@/images/logos/facebook.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
-import logoStarbucks from '@/images/logos/starbucks.svg'
+
+import fftaLogo from '@/images/logos/ffta.png'
+import commiteLogo from '@/images/logos/commite.jpg'
+import caLogo from '@/images/logos/ca.jpg'
+import vendespaceLogo from '@/images/vendespace-logo.jpg'
+import armurerieLogo from '@/images/logos/logo-armurerie-bocage.jpg'
+
+import FacebookIcon from '@/images/icons/facebook-circular-logo.svg'
+
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
 import { formatDate } from '@/lib/formatDate'
 import { Fragment } from 'react'
+import {MapPinIcon} from "@heroicons/react/20/solid";
 
 function MailIcon(props) {
   return (
@@ -139,85 +143,6 @@ function Newsletter() {
   )
 }
 
-function Resume() {
-  let resume = [
-    {
-      company: 'Planetaria',
-      title: 'CEO',
-      logo: logoPlanetaria,
-      start: '2019',
-      end: {
-        label: 'Present',
-        dateTime: new Date().getFullYear(),
-      },
-    },
-    {
-      company: 'Airbnb',
-      title: 'Product Designer',
-      logo: logoAirbnb,
-      start: '2014',
-      end: '2019',
-    },
-    {
-      company: 'Facebook',
-      title: 'iOS Software Engineer',
-      logo: logoFacebook,
-      start: '2011',
-      end: '2014',
-    },
-    {
-      company: 'Starbucks',
-      title: 'Shift Supervisor',
-      logo: logoStarbucks,
-      start: '2008',
-      end: '2011',
-    },
-  ]
-
-  return (
-    <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
-      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-        <BriefcaseIcon className="h-6 w-6 flex-none" />
-        <span className="ml-3">Work</span>
-      </h2>
-      <ol className="mt-6 space-y-4">
-        {resume.map((role, roleIndex) => (
-          <li key={roleIndex} className="flex gap-4">
-            <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-              <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
-            </div>
-            <dl className="flex flex-auto flex-wrap gap-x-2">
-              <dt className="sr-only">Company</dt>
-              <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                {role.company}
-              </dd>
-              <dt className="sr-only">Role</dt>
-              <dd className="text-xs text-zinc-500 dark:text-zinc-400">
-                {role.title}
-              </dd>
-              <dt className="sr-only">Date</dt>
-              <dd
-                className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
-                aria-label={`${role.start.label ?? role.start} until ${
-                  role.end.label ?? role.end
-                }`}
-              >
-                <time dateTime={role.start.dateTime ?? role.start}>
-                  {role.start.label ?? role.start}
-                </time>{' '}
-                <span aria-hidden="true">—</span>{' '}
-                <time dateTime={role.end.dateTime ?? role.end}>
-                  {role.end.label ?? role.end}
-                </time>
-              </dd>
-            </dl>
-          </li>
-        ))}
-      </ol>
-    </div>
-  )
-}
-
 function Photos() {
   let rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
 
@@ -285,6 +210,220 @@ const activity = [
     time: '14h00 - 17h25',
     value: 'Entraînement (3 volées) suivi des qualifications en rythme AB/CD',
   },
+  {
+    type: 'detail',
+    time: '17h45 - 18h00',
+    value: 'Entraînement (3 volées)',
+  },
+  {
+    type: 'detail',
+    time: '18h00 - 18h25',
+    value: '1/16: U15FCL, U15HCL',
+  },
+  {
+    type: 'detail',
+    time: '18h30 - 18h55',
+    value: '1/8: U15FCL, U15HCL',
+  },
+  {
+    type: 'event',
+    person: { name: 'Deuxième journée', href: '#' },
+    imageUrl: 'https://images.unsplash.com/photo-1520785643438-5bf77931f493?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80',
+    comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt nunc ipsum tempor purus vitae id. Morbi in vestibulum nec varius. Et diam cursus quis sed purus nam. ',
+    date: '25/02/23',
+  },
+  {
+    type: 'detail',
+    time: '07h00 - 08h00',
+    value: 'Ouverture du greffe',
+  },
+  {
+    type: 'detail',
+    time: '07h15 - 08h15',
+    value: 'Echauffement salle Anexe Départ 2',
+  },
+  {
+    type: 'detail',
+    time: '08h30 - 11h55',
+    value: 'Entraînement (3 volées) suivi des qualifications en rythme AB/CD',
+  },
+  {
+    type: 'detail',
+    time: '10h30 - 12h00',
+    value: 'Ouverture de greffe Départ 3',
+  },
+  {
+    type: 'detail',
+    time: '12h15 - 12h30',
+    value: 'Entraînement (3 volées)',
+  },
+  {
+    type: 'detail',
+    time: '12h30 - 12h55',
+    value: '1/16: U13HCL, U21HCL',
+  },
+  {
+    type: 'detail',
+    time: '13h00 - 14h00',
+    value: 'Echauffement Salle Annexe pour le départ 3',
+  },
+  {
+    type: 'detail',
+    time: '13h00 - 13h15',
+    value: 'Entraînement (3 volées)',
+  },
+  {
+    type: 'detail',
+    time: '13h15 - 13h40',
+    value: '1/8: U13FCL, U13HCL, U21FCL, U21HCL',
+  },
+  {
+    type: 'detail',
+    time: '14h15 - 17h40',
+    value: 'Entraînement (3 volées) suivi des qualifications en rythme AB/CD',
+  },
+  {
+    type: 'detail',
+    time: '18h00 - 18h15',
+    value: 'Entraînement (3 volées)',
+  },
+  {
+    type: 'detail',
+    time: '18h15 - 18h40',
+    value: '1/16: U18FCL, U18HCL',
+  },
+  {
+    type: 'detail',
+    time: '18h45 - 16h10',
+    value: '1/8: U18FCL, U18HCL',
+  },
+  {
+    type: 'event',
+    person: { name: 'Troisième journée', href: '#' },
+    imageUrl: 'https://images.unsplash.com/photo-1520785643438-5bf77931f493?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80',
+    comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt nunc ipsum tempor purus vitae id. Morbi in vestibulum nec varius. Et diam cursus quis sed purus nam. ',
+    date: '26/02/23',
+  },
+  {
+    type: 'detail',
+    time: '07h30 - 08h15',
+    value: 'Echauffement Salle Annexe U15CL, U18CL, U21CL & U21CO',
+  },
+  {
+    type: 'detail',
+    time: '08h30 - 08h45',
+    value: 'Entraînement (3 volées)',
+  },
+  {
+    type: 'detail',
+    time: '08h45 - 09h10',
+    value: '1/4: U15FCL, U15HCL, U18FCL, U18HCL, U21FCL, U21HCL, U21HCO',
+  },
+  {
+    type: 'detail',
+    time: '08h45 - 9h20',
+    value: 'Entraînement (3 volées)',
+  },
+  {
+    type: 'detail',
+    time: '09h20 - 09h45',
+    value: '1/2: U15FCL, U15HCL, U18FCL, U18HCL, U21FCL, U21HCL, U21FCO, U21HCO',
+  },
+  {
+    type: 'detail',
+    time: '09h30 - 10h15',
+    value: 'Echauffement Salle Annexe U13CL, U18CO & U18BB',
+  },
+  {
+    type: 'detail',
+    time: '09h50 - 10h15',
+    value: 'Bronze: U15FCL, U15HCL, U18FCL, U18HCL, U21FCL, U21HCL, U21FCO, U21HCO',
+  },
+  {
+    type: 'detail',
+    time: '10h25 - 10h40',
+    value: 'Entraînement (3 volées)',
+  },
+  {
+    type: 'detail',
+    time: '10h40 - 11h05',
+    value: '1/4: U13FCL, U13HCL, U18HCO, U18HBB',
+  },
+  {
+    type: 'detail',
+    time: '10h40 - 11h15',
+    value: 'Entraînement (3 volées)',
+  },
+  {
+    type: 'detail',
+    time: '11h15 - 11h40',
+    value: '1/2: U13FCL, U13HCL, U18FCO, U18HCO, U18FBB, U18HBB',
+  },
+  {
+    type: 'detail',
+    time: '11h45 - 12h10',
+    value: 'Bronze: U13FCL, U13HCL, U18FCO, U18HCO, U18FBB, U18HBB',
+  },
+  {
+    type: 'detail',
+    time: '12h15 - 12h30',
+    value: 'Entraînement (1 volée)',
+  },
+  {
+    type: 'detail',
+    time: '12h20 - 12h45',
+    value: 'Finale Or: U13FCL, U13HCL, U18FCO, U18HCO, U18FBB, U18HBB',
+  },
+  {
+    type: 'detail',
+    time: '12h30 - 15h25',
+    value: 'Echauffement Salle Annexe Finalistes OR',
+  },
+  {
+    type: 'detail',
+    time: '13h45 - 14h00',
+    value: 'Finale Or: U15 Femme Arc Classique',
+  },
+  {
+    type: 'detail',
+    time: '14h02 - 14h17',
+    value: 'Finale Or: U15 Homme Arc Classique',
+  },
+  {
+    type: 'detail',
+    time: '14h19 - 14h34',
+    value: 'Finale Or: U18 Femme Arc Classique',
+  },
+  {
+    type: 'detail',
+    time: '14h36 - 14h51',
+    value: 'Finale Or: U18 Arc Homme Classique',
+  },
+  {
+    type: 'detail',
+    time: '14h53 - 15h08',
+    value: 'Finale Or: U21 Femme Arc à Poulies',
+  },
+  {
+    type: 'detail',
+    time: '15h10 - 15h25',
+    value: 'Finale Or: U21 Homme Arc à Poulies',
+  },
+  {
+    type: 'detail',
+    time: '15h27 - 15h42',
+    value: 'Finale Or: U21 Arc Femme Classique',
+  },
+  {
+    type: 'detail',
+    time: '15h44 - 15h59',
+    value: 'Finale Or: U21 Homme Arc Classique',
+  },
+  {
+    type: 'detail',
+    time: '16h15 - 16h45',
+    value: 'Podiums Toutes catégories',
+  },
 ]
 
 function Timeline() {
@@ -293,7 +432,7 @@ function Timeline() {
       <ul role="list" className="-mb-8">
         {activity.map((activityItem, activityItemIdx) => (
           <li key={activityItem.id}>
-            <div className="relative pb-8">
+            <div className="relative pb-5">
               {activityItemIdx !== activity.length - 1 ? (
                 <span className="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true" />
               ) : null}
@@ -301,14 +440,10 @@ function Timeline() {
                 {activityItem.type === 'event' ? (
                   <>
                     <div className="relative">
-                      <img
-                        className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-400 ring-8 ring-white"
-                        src={activityItem.imageUrl}
-                        alt=""
-                      />
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-500 ring-8 ring-white"></div>
 
                       <span className="absolute -bottom-0.5 -right-1 rounded-tl bg-white px-0.5 py-px">
-                        <ChatBubbleLeftEllipsisIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
+                        <SunIcon className="h-5 w-5 text-red-500" aria-hidden="true" />
                       </span>
                     </div>
                     <div className="min-w-0 flex-1">
@@ -328,9 +463,9 @@ function Timeline() {
                 ) : activityItem.type === 'detail' ? (
                   <>
                     <div>
-                      <div className="relative px-1">
-                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 ring-8 ring-white">
-                          <UserCircleIcon className="h-5 w-5 text-gray-500" aria-hidden="true" />
+                      <div className="relative px-2">
+                        <div className="flex h-6 w-6 items-center justify-center rounded-full bg-red-100 ring-8 ring-white">
+                          <MapPinIcon className="h-4 w-4 text-red-500" aria-hidden="true" />
                         </div>
                       </div>
                     </div>
@@ -343,51 +478,51 @@ function Timeline() {
                       </div>
                     </div>
                   </>
-                ) : activityItem.type === 'tags' ? (
-                  <>
-                    <div>
-                      <div className="relative px-1">
-                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 ring-8 ring-white">
-                          <TagIcon className="h-5 w-5 text-gray-500" aria-hidden="true" />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="min-w-0 flex-1 py-0">
-                      <div className="text-sm leading-8 text-gray-500">
-                        <span className="mr-0.5">
-                          <a href={activityItem.person.href} className="font-medium text-gray-900">
-                            {activityItem.person.name}
-                          </a>{' '}
-                          added tags
-                        </span>{' '}
-                        <span className="mr-0.5">
-                          {activityItem.tags.map((tag) => (
-                            <Fragment key={tag.name}>
-                              <a
-                                href={tag.href}
-                                className="relative inline-flex items-center rounded-full border border-gray-300 px-3 py-0.5 text-sm"
-                              >
-                                <span className="absolute flex flex-shrink-0 items-center justify-center">
-                                  <span
-                                    className={clsx(tag.color, 'h-1.5 w-1.5 rounded-full')}
-                                    aria-hidden="true"
-                                  />
-                                </span>
-                                <span className="ml-3.5 font-medium text-gray-900">{tag.name}</span>
-                              </a>{' '}
-                            </Fragment>
-                          ))}
-                        </span>
-                        <span className="whitespace-nowrap">{activityItem.date}</span>
-                      </div>
-                    </div>
-                  </>
-                ) : null}
+                ): null}
               </div>
             </div>
           </li>
         ))}
       </ul>
+    </div>
+  )
+}
+
+function Partners () {
+  return (
+    <div className="bg-white">
+      <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-4">
+          <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+            <div>
+              <Image src={fftaLogo} className="w-full h-16" />
+            </div>
+          </div>
+          <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+            <div>
+              <Image src={commiteLogo} className="h-16 w-16" />
+            </div>
+          </div>
+          <div className="col-span-2 flex justify-center md:col-span-3 lg:col-span-1">
+            <Image src={vendespaceLogo} className="h-16" />
+          </div>
+          <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+            <div>
+              <Image src={fftaLogo} className="h-16" />
+            </div>
+          </div>
+          <div className="col-span-1 flex justify-center md:col-span-3 lg:col-span-1">
+            <div>
+              <Image src={caLogo} className="h-16" />
+            </div>
+          </div>
+          <div className="col-span-1 flex justify-center md:col-span-3 lg:col-span-1">
+            <div>
+              <Image src={armurerieLogo} className="h-16" />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
@@ -424,6 +559,9 @@ export default function Home({ articles }) {
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
             />
+            <Link className="group -m-1 p-1" href="https://m.facebook.com/profile.php?id=100029087427139" target="_blank">
+              <Image src={FacebookIcon} className="h-5 w-5 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+            </Link>
           </div>
         </div>
       </Container>
@@ -441,12 +579,22 @@ export default function Home({ articles }) {
         </div>
       </Container>
       <Container className="mt-9 py-10">
-        <h2 className="text-3xl font-semibold tracking-tight text-zinc-800 dark:text-zinc-100 mb-5">Déroulement</h2>
-        <Timeline />
+        <h2 className="text-3xl font-semibold tracking-tight text-zinc-800 dark:text-zinc-100 mb-5">Nos partenaires</h2>
+        <p className="mt-6 max-w-2xl text-base text-zinc-600 dark:text-zinc-400">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+        <Partners />
       </Container>
       <Container className="mt-9 py-10">
         <h2 className="text-3xl font-semibold tracking-tight text-zinc-800 dark:text-zinc-100 mb-5">Localisation</h2>
+        <p className="mt-6 max-w-2xl text-base text-zinc-600 dark:text-zinc-400">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
         <Maps />
+      </Container>
+      <Container className="mt-9 py-10">
+        <h2 className="text-3xl font-semibold tracking-tight text-zinc-800 dark:text-zinc-100 mb-5">Déroulement</h2>
+        <Timeline />
       </Container>
     </>
   )
