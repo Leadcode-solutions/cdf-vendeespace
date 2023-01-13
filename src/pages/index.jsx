@@ -22,6 +22,9 @@ import commiteLogo from '@/images/logos/commite.jpg'
 import caLogo from '@/images/logos/ca.jpg'
 import vendespaceLogo from '@/images/vendespace-logo.jpg'
 import armurerieLogo from '@/images/logos/logo-armurerie-bocage.jpg'
+import ibisLogo from '@/images/logos/RBI 30 oreillers.jpg'
+import rocardLogo from '@/images/logos/Logo ROCARD TP V.jpg'
+import jambonDeVendeeLogo from '@/images/logos/918611_PETITGAS_Affiche_4x3-HD.jpg'
 
 import FacebookIcon from '@/images/icons/facebook-circular-logo.svg'
 
@@ -500,26 +503,32 @@ function Partners () {
           </div>
           <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
             <div>
-              <Image src={commiteLogo} className="h-16 w-16" />
+              <Image src={commiteLogo} className="h-32 w-32" />
             </div>
           </div>
           <div className="col-span-2 flex justify-center md:col-span-3 lg:col-span-1">
-            <Image src={vendespaceLogo} className="h-16" />
+            <Image src={vendespaceLogo} className="h-32 w-32" />
+          </div>
+          <div className="col-span-1 flex justify-center md:col-span-3 lg:col-span-1">
+            <div>
+              <Image src={caLogo} className="w-full" />
+            </div>
+          </div>
+          <div className="col-span-1 flex justify-center md:col-span-3 lg:col-span-1">
+            <div>
+              <Image src={armurerieLogo} className="w-full" />
+            </div>
+          </div>
+          <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+              <Image src={ibisLogo} className="w-full" />
           </div>
           <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
             <div>
-              <Image src={fftaLogo} className="h-16" />
+              <Image src={rocardLogo} className="w-full" />
             </div>
           </div>
-          <div className="col-span-1 flex justify-center md:col-span-3 lg:col-span-1">
-            <div>
-              <Image src={caLogo} className="h-16" />
-            </div>
-          </div>
-          <div className="col-span-1 flex justify-center md:col-span-3 lg:col-span-1">
-            <div>
-              <Image src={armurerieLogo} className="h-16" />
-            </div>
+          <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+              <Image src={jambonDeVendeeLogo} className="w-full" />
           </div>
         </div>
       </div>
