@@ -21,7 +21,7 @@ function Article({ article }) {
           {formatDate(article.date)}
         </Card.Eyebrow>
         <Card.Description>{article.description}</Card.Description>
-        <Card.Cta>Read article</Card.Cta>
+        <Card.Cta>Lire l'article</Card.Cta>
       </Card>
       <Card.Eyebrow
         as="time"
@@ -38,7 +38,7 @@ export default function ArticlesIndex({ articles }) {
   return (
     <>
       <Head>
-        <title>Articles - Spencer Sharp</title>
+        <title>Articles</title>
         <meta
           name="description"
           content="All of my long-form thoughts on programming, leadership, product design, and more, collected in chronological order."
@@ -46,7 +46,7 @@ export default function ArticlesIndex({ articles }) {
       </Head>
       <SimpleLayout
         title="Suivez nos articles pour ne rien manquer de nos actualités."
-        intro="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        intro=""
       >
         <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
           <div className="flex max-w-3xl flex-col space-y-16">

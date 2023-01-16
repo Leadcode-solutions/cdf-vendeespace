@@ -127,9 +127,6 @@ function Newsletter() {
         <MailIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Soyez à jour !</span>
       </h2>
-      <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      </p>
       <div className="mt-6 flex">
         <input
           type="email"
@@ -190,7 +187,6 @@ const activity = [
     type: 'event',
     person: { name: 'Première journée', href: '#' },
     imageUrl: 'https://images.unsplash.com/photo-1520785643438-5bf77931f493?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80',
-    comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt nunc ipsum tempor purus vitae id. Morbi in vestibulum nec varius. Et diam cursus quis sed purus nam. ',
     date: '24/02/23',
   },
   {
@@ -232,7 +228,6 @@ const activity = [
     type: 'event',
     person: { name: 'Deuxième journée', href: '#' },
     imageUrl: 'https://images.unsplash.com/photo-1520785643438-5bf77931f493?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80',
-    comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt nunc ipsum tempor purus vitae id. Morbi in vestibulum nec varius. Et diam cursus quis sed purus nam. ',
     date: '25/02/23',
   },
   {
@@ -304,7 +299,6 @@ const activity = [
     type: 'event',
     person: { name: 'Troisième journée', href: '#' },
     imageUrl: 'https://images.unsplash.com/photo-1520785643438-5bf77931f493?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80',
-    comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt nunc ipsum tempor purus vitae id. Morbi in vestibulum nec varius. Et diam cursus quis sed purus nam. ',
     date: '26/02/23',
   },
   {
@@ -458,9 +452,6 @@ function Timeline() {
                         </div>
                         <p className="mt-0.5 text-sm text-gray-500">Le {activityItem.date}</p>
                       </div>
-                      <div className="mt-2 text-sm text-gray-700">
-                        <p>{activityItem.comment}</p>
-                      </div>
                     </div>
                   </>
                 ) : activityItem.type === 'detail' ? (
@@ -582,23 +573,14 @@ export default function Home({ articles }) {
               <Article key={article.slug} article={article} />
             ))}
           </div>
-          <div className="space-y-10 lg:pl-16 xl:pl-24">
-            <Newsletter />
-          </div>
         </div>
       </Container>
       <Container className="mt-9 py-10">
         <h2 className="text-3xl font-semibold tracking-tight text-zinc-800 dark:text-zinc-100 mb-5">Nos partenaires</h2>
-        <p className="mt-6 max-w-2xl text-base text-zinc-600 dark:text-zinc-400">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
         <Partners />
       </Container>
       <Container className="mt-9 py-10">
         <h2 className="text-3xl font-semibold tracking-tight text-zinc-800 dark:text-zinc-100 mb-5">Localisation</h2>
-        <p className="mt-6 max-w-2xl text-base text-zinc-600 dark:text-zinc-400">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
         <Maps />
       </Container>
       <Container className="mt-9 py-10">
