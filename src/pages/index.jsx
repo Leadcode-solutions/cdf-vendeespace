@@ -25,6 +25,8 @@ import armurerieLogo from '@/images/logos/logo-armurerie-bocage.jpg'
 import ibisLogo from '@/images/logos/RBI 30 oreillers.jpg'
 import rocardLogo from '@/images/logos/Logo ROCARD TP V.jpg'
 import jambonDeVendeeLogo from '@/images/logos/918611_PETITGAS_Affiche_4x3-HD.jpg'
+import departement1 from '@/images/logos/_CGV_LogoLeDepartement_HORIZONTAL_ED_Couleur.png'
+import departement2 from '@/images/logos/_CGV_LogoLeDepartement_VERTICAL_ED_Couleur.jpg'
 
 import FacebookIcon from '@/images/icons/facebook-circular-logo.svg'
 
@@ -495,6 +497,16 @@ function Partners () {
           <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
             <div>
               <Image src={commiteLogo} className="h-32 w-32" />
+            </div>
+          </div>
+          <div className="col-span-1 flex justify-center md:col-span-3 lg:col-span-1">
+            <div>
+              <Image src={departement1} className="w-full" />
+            </div>
+          </div>
+          <div className="col-span-1 flex justify-center md:col-span-3 lg:col-span-1">
+            <div>
+              <Image src={departement2} className="w-full" />
             </div>
           </div>
           <div className="col-span-2 flex justify-center md:col-span-3 lg:col-span-1">
