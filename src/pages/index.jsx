@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import clsx from 'clsx'
 
-import {ChatBubbleLeftEllipsisIcon, UserCircleIcon, TagIcon, SunIcon} from '@heroicons/react/24/solid'
+import {SunIcon} from '@heroicons/react/24/solid'
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
@@ -25,8 +25,13 @@ import armurerieLogo from '@/images/logos/logo-armurerie-bocage.jpg'
 import ibisLogo from '@/images/logos/RBI 30 oreillers.jpg'
 import rocardLogo from '@/images/logos/Logo ROCARD TP V.jpg'
 import jambonDeVendeeLogo from '@/images/logos/918611_PETITGAS_Affiche_4x3-HD.jpg'
-import departement1 from '@/images/logos/_CGV_LogoLeDepartement_HORIZONTAL_ED_Couleur.png'
 import departement2 from '@/images/logos/_CGV_LogoLeDepartement_VERTICAL_ED_Couleur.jpg'
+import ouestFrais from '@/images/logos/image001.png'
+import poupart from '@/images/logos/image002.png'
+import comptoirGourmand from '@/images/logos/logo CG fond blanc.png'
+import region from '@/images/logos/LOGO_CMJN.jpg'
+import cfj from '@/images/logos/2023 07 20 logo CFJ_4x3_04.png'
+import franceFrais from '@/images/logos/image003.png'
 
 import FacebookIcon from '@/images/icons/facebook-circular-logo.svg'
 
@@ -501,16 +506,16 @@ function Partners () {
           </div>
           <div className="col-span-1 flex justify-center md:col-span-3 lg:col-span-1">
             <div>
-              <Image src={departement1} className="w-full" />
-            </div>
-          </div>
-          <div className="col-span-1 flex justify-center md:col-span-3 lg:col-span-1">
-            <div>
               <Image src={departement2} className="w-full" />
             </div>
           </div>
           <div className="col-span-2 flex justify-center md:col-span-3 lg:col-span-1">
             <Image src={vendespaceLogo} className="h-32 w-32" />
+          </div>
+          <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+            <div>
+              <Image src={region} className="w-full" />
+            </div>
           </div>
           <div className="col-span-1 flex justify-center md:col-span-3 lg:col-span-1">
             <div>
@@ -523,7 +528,7 @@ function Partners () {
             </div>
           </div>
           <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-              <Image src={ibisLogo} className="w-full" />
+            <Image src={ibisLogo} className="w-full" />
           </div>
           <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
             <div>
@@ -531,7 +536,34 @@ function Partners () {
             </div>
           </div>
           <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+            <div>
               <Image src={jambonDeVendeeLogo} className="w-full" />
+            </div>
+          </div>
+          <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+            <div>
+              <Image src={ouestFrais} className="w-full" />
+            </div>
+          </div>
+          <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+            <div>
+              <Image src={poupart} className="w-full" />
+            </div>
+          </div>
+          <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+            <div>
+              <Image src={comptoirGourmand} className="w-full" />
+            </div>
+          </div>
+          <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+            <div>
+              <Image src={cfj} className="w-full" />
+            </div>
+          </div>
+          <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+            <div>
+              <Image src={franceFrais} className="w-full" />
+            </div>
           </div>
         </div>
       </div>
