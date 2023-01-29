@@ -6,6 +6,9 @@ import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
 import logo from '@/images/logos/_CGV_LogoLeDepartement_HORIZONTAL_ED_Couleur.png'
+import ffta from '@/images/logos/Logo FFTA-RVB.png'
+import cfj from '@/images/logos/2023 07 20 logo CFJ_4x3_04.png'
+import ca from '@/images/logos/ca.jpg'
 import { Fragment, useEffect, useRef } from 'react'
 
 function CloseIcon(props) {
@@ -219,7 +222,7 @@ function AvatarContainer({ className, ...props }) {
   )
 }
 
-function Avatar({ large = false, className, ...props }) {
+function Avatar({ logo, large = false, hLarge = false, size, className, ...props }) {
   return (
     <Link
       href="/"
@@ -232,7 +235,10 @@ function Avatar({ large = false, className, ...props }) {
         alt=""
         className={clsx(
           'bg-zinc-100 dark:bg-zinc-800 shadow-lg',
-          large ? 'w-32' : 'h-9 w-9 shadow-lg'
+          size,
+          large && 'w-32',
+          hLarge && 'h-full aspect-video',
+          !large && !hLarge && 'h-9 w-9'
         )}
         priority
       />
@@ -366,16 +372,28 @@ export function Header() {
                 className="top-[var(--avatar-top,theme(spacing.3))] w-full"
                 style={{ position: 'var(--header-inner-position)' }}
               >
-                <div className="relative">
-                  <AvatarContainer
-                    className="absolute left-0 top-3 origin-left transition-opacity"
-                    style={{
-                      opacity: 'var(--avatar-border-opacity, 0)',
-                      transform: 'var(--avatar-border-transform)',
-                    }}
+                <div className="relative flex justify-between">
+                  <Avatar
+                    large
+                    logo={logo}
+                    className="block origin-left"
+                    style={{ transform: 'var(--avatar-image-transform)' }}
                   />
                   <Avatar
                     large
+                    logo={ffta}
+                    className="block origin-left h-full"
+                    style={{ transform: 'var(--avatar-image-transform)' }}
+                  />
+                  <Avatar
+                    large
+                    logo={cfj}
+                    className="block origin-left"
+                    style={{ transform: 'var(--avatar-image-transform)' }}
+                  />
+                  <Avatar
+                    hLarge
+                    logo={ca}
                     className="block origin-left"
                     style={{ transform: 'var(--avatar-image-transform)' }}
                   />

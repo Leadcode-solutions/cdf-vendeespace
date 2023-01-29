@@ -32,6 +32,12 @@ import comptoirGourmand from '@/images/logos/logo CG fond blanc.png'
 import region from '@/images/logos/LOGO_CMJN.jpg'
 import cfj from '@/images/logos/2023 07 20 logo CFJ_4x3_04.png'
 import franceFrais from '@/images/logos/image003.png'
+import jra from '@/images/logos/Logo Jean Rouyer.png'
+import drouard from '@/images/logos/drouard.png'
+import airaud from '@/images/logos/airaud.png'
+import brioche from '@/images/logos/LOGO BF.png'
+import montaigu from '@/images/logos/MV logotype_ couleurs RVB.png'
+import tdm from '@/images/logos/TDM logotype_ rose RVB.png'
 
 import FacebookIcon from '@/images/icons/facebook-circular-logo.svg'
 
@@ -565,6 +571,36 @@ function Partners () {
               <Image src={franceFrais} className="w-full" />
             </div>
           </div>
+          <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+            <div>
+              <Image src={jra} className="w-full" />
+            </div>
+          </div>
+          <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+            <div>
+              <Image src={drouard} className="w-full" />
+            </div>
+          </div>
+          <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+            <div>
+              <Image src={airaud} className="w-full" />
+            </div>
+          </div>
+          <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+            <div>
+              <Image src={brioche} className="w-full" />
+            </div>
+          </div>
+          <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+            <div>
+              <Image src={montaigu} className="w-full" />
+            </div>
+          </div>
+          <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+            <div>
+              <Image src={tdm} className="w-full" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -584,7 +620,7 @@ export default function Home({ articles }) {
         />
       </Head>
       <Container className="mt-9">
-        <div className="max-w-2xl">
+        <div className="pt-10 max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
             Championnat de France 2023<br />en salle 18m.
           </h1>
