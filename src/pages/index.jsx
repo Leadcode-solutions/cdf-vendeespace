@@ -38,6 +38,10 @@ import airaud from '@/images/logos/airaud.png'
 import brioche from '@/images/logos/LOGO BF.png'
 import montaigu from '@/images/logos/MV logotype_ couleurs RVB.png'
 import tdm from '@/images/logos/TDM logotype_ rose RVB.png'
+import hyperu from '@/images/logos/HU-La-Roche-sur-Yon-contour-blanc.png'
+import gaecparpoupet from '@/images/logos/gaec parpoupet.jpg'
+import hm from '@/images/logos/HM_G-VYV_BL_J M 187 CoolGray10 surimp.png'
+import color36 from '@/images/logos/color 36.jpg'
 
 import FacebookIcon from '@/images/icons/facebook-circular-logo.svg'
 
@@ -599,6 +603,26 @@ function Partners () {
           <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
             <div>
               <Image src={tdm} className="w-full" />
+            </div>
+          </div>
+          <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+            <div>
+              <Image src={gaecparpoupet} className="w-full" />
+            </div>
+          </div>
+          <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+            <div>
+              <Image src={color36} className="w-full" />
+            </div>
+          </div>
+          <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+            <div>
+              <Image src={hyperu} className="w-full" />
+            </div>
+          </div>
+          <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+            <div>
+              <Image src={hm} className="w-full" />
             </div>
           </div>
         </div>
