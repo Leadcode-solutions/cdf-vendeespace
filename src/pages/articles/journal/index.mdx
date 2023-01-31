@@ -1,0 +1,14 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Article from './article CFJ.png'
+import Image from 'next/future/image'
+
+export const meta = {
+  author: 'Baptiste Parmantier',
+  date: '2023-01-31',
+  title: 'Article de presse',
+  description: 'Du 24 au 26 février, le Vendéspace accueille e championnat de France jeunes de tir à l\'arc, un événement réunissant les 384 meilleurs archers français de moins de 21 ans.',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+<Image src={Article} alt="" />
