@@ -42,6 +42,7 @@ import hyperu from '@/images/logos/HU-La-Roche-sur-Yon-contour-blanc.png'
 import gaecparpoupet from '@/images/logos/gaec parpoupet.jpg'
 import hm from '@/images/logos/HM_G-VYV_BL_J M 187 CoolGray10 surimp.png'
 import color36 from '@/images/logos/color 36.jpg'
+import cave from '@/images/logos/1675153330783.jpg'
 
 import FacebookIcon from '@/images/icons/facebook-circular-logo.svg'
 
@@ -623,6 +624,11 @@ function Partners () {
           <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
             <div>
               <Image src={hm} className="w-full" />
+            </div>
+          </div>
+          <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+            <div>
+              <Image src={cave} className="w-full" />
             </div>
           </div>
         </div>
